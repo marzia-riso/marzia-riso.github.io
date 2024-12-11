@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>BoolSurf: Boolean Operations on Surfaces</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/projects_style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body class="h-entry">
+		<h1 class="p-name"><a class="u-url" href="boolsurf.html">BoolSurf: Boolean Operations on Surfaces</a></h1>
+
+		<div class="s-venue">
+			ACM Transactions on Graphics (SIGGRAPH Asia '<time class="dt-published" datetime="2024-12-01 12:00:00">22</time>)
+		</div>
+
+		<div class="s-authorlist">
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://marzia-riso.github.io">Marzia Riso</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a></li>
+				</ul>
+			</div>
+            <div class="p-author h-card">
+				<a class="p-name u-url" href="https://x.com/nazzarogiacomo">Giacomo Nazzaro</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://person.dibris.unige.it/puppo-enrico/">Enrico Puppo</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://unige.it/">University of Genoa</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://www.cs.toronto.edu/~jacobson/">Alec Jacobson</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://web.cs.toronto.edu/">University of Toronto, Adobe Research</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://research.adobe.com/person/qingnan-zhou/">Qingnan Zhou</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://research.adobe.com/">Adobe Research</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://xelatihy.github.io/">Fabio Pellacini</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<main>
+			<figure>
+				<img alt="Teaser image" src="assets/boolsurf/boolsurf_teaser_full.png"/>
+				<figcaption>
+					We compute Boolean operations between shapes bounded by closed curves on surfaces, consisting of geodesic polygons and Bézier splines. We support,
+					intricate and self-intersecting shapes on surfaces of any genus and optionally open boundaries (left and center). As an alternative to Booleans, we also define
+					Boundary Sampled Curves, which extend the work of Du et al. [2021] to the manifold domain (right).
+                </figcaption>
+			</figure>
+
+			<ul class="s-download-links">
+				<li><a href="assets/boolsurf/boolsurf_paper.pdf">Paper</a></li> <li><a href="https://www.youtube.com/watch?v=U0ZkyioupOE">Video</a></li>
+			</ul>
+
+			<section>
+				<h2>Abstract</h2>
+				<p class="p-summary s-content">
+                    We port Boolean set operations between 2D shapes to surfaces of any genus,
+					with any number of open boundaries.We combine shapes bounded by sets of
+					freely intersecting loops, consisting of geodesic lines and cubic Bézier splines
+					lying on a surface. We compute the arrangement of shapes directly on the
+					surface and assign integer labels to the cells of such arrangement. Differently
+					from the Euclidean case, some arrangements on a manifold may be inconsistent.
+					We detect inconsistent arrangements and help the user to resolve
+					them. Also, we extend to the manifold setting recent work on Boundary-
+					Sampled Halfspaces, thus supporting operations more general than standard
+					Booleans, which are well defined on inconsistent arrangements, too. Our
+					implementation discretizes the input shapes into polylines at an arbitrary resolution, 
+					independent of the level of resolution of the underlying mesh.
+					We resolve the arrangement inside each triangle of the mesh independently
+					and combine the results to reconstruct both the boundaries and the interior
+					of each cell in the arrangement. We reconstruct the control points of curves
+					bounding cells, in order to free the result from discretization and provide
+					an output in vector format. We support interactive usage, editing shapes
+					consisting up to 100k line segments on meshes of up to 1M triangles.
+				</p>
+			</section>
+
+			<section>
+				<h2>Video</h2>
+				<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/U0ZkyioupOE?si=-7YdTHuz7azcgyl8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+			</section>
+
+			<section>
+				<h2>Citation</h2>
+				<p class="s-citation">@article{riso22boolsurf,
+    author = {Riso, Marzia and Nazzaro, Giacomo and Puppo, Enrico and Jacobson, Alec and Zhou, Qingnan and Pellacini, Fabio},
+    title = {BoolSurf: Boolean Operations on Surfaces},
+    year = {2022},
+    publisher = {Association for Computing Machinery},
+    doi = {10.1145/3550454.3555466},
+    journal = {ACM Transactions on Graphics}
+}</p>
+			</section>
+
+			<footer>&nbsp;</footer>
+		</main>
+
+		<!-- MathJax configuration -->
+		<script>
+		MathJax = {
+			tex: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		};
+		</script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	</body>
+</html>

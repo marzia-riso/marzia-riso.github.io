@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>pOp: Parameter Optimization of Differentiable Vector Patterns</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/projects_style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body class="h-entry">
+		<h1 class="p-name"><a class="u-url" href="pop.html">pOp: Parameter Optimization of Differentiable Vector Patterns</a></h1>
+
+		<div class="s-venue">
+			Eurographics Symposium on Rendering '<time class="dt-published" datetime="2024-12-01 12:00:00">22</time> - Computer Graphics Forum
+		</div>
+
+		<div class="s-authorlist">
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://marzia-riso.github.io">Marzia Riso</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a></li>
+				</ul>
+			</div>
+            <div class="p-author h-card">
+				<a class="p-name u-url" href="https://marzia-riso.github.io">Davide Sforza</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://xelatihy.github.io/">Fabio Pellacini</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<main>
+			<figure>
+				<img alt="Teaser image" src="assets/pop/pop_teaser_full.png"/>
+				<figcaption>
+                    pOp finds the parameters of procedural vector graphics patterns that best match target images. 
+                    We support patterns comprised of standard vector graphics elements, e.g. circles, rectangles, lines, and quadratic 
+                    Bèzier curves, where the translation, rotation and scale of the elements is defined by an arbitrary procedural 
+                    program. Here we show several examples from different generators. We tested our algorithm with synthetic input 
+                    generated from a pattern instance, that lets us measure the goodness of fit, here reported as mean squared error 
+                    (MSE) of the procedural parameters. We also include examples fitted from hand-drawn input, mimicking a possible 
+                    design application.
+                </figcaption>
+			</figure>
+
+			<ul class="s-download-links">
+				<li><a href="assets/pop/pop_paper.pdf">Paper</a></li>
+			</ul>
+
+			<section>
+				<h2>Abstract</h2>
+				<p class="p-summary s-content">
+                    Procedural materials are extensively used in computer graphics, since they provide editable, resolution-independent representation 
+                    of textures. However, tuning the parameters of procedural generators to achieve a desired result remains time-consuming for users. 
+                    Recently, inverse procedural material algorithms have been developed, exploiting differentiable rendering methods to find the 
+                    parameters of a procedural model that match a target image. These approaches focus on raster textures. We propose pOp, a practical 
+                    method for estimating the parameters of vector patterns, that are formed by collections of vector shapes arranged by an arbitrary 
+                    procedural program. In our approach, patterns are defined as arbitrary programs, that control the translation, rotation and scale 
+                    or vector graphics elements. We support elements typical of vector graphics, namely points, lines, circle, rounded rectangles, and 
+                    quadratic Bèzier drawings, in multiple colors. We optimize the program parameters by automatically differentiating the signed 
+                    distance field of the drawing, which we found to be significantly more reliable than using differentiable rendering of the final 
+                    image. We demonstrate our method on a variety of cases, representing the variations found in structured vector patterns.
+				</p>
+			</section>
+
+			<section>
+				<h2>Citation</h2>
+				<p class="s-citation">
+@article{riso22pop,
+    author = {Riso, Marzia and Sforza, Davide and Pellacini, Fabio},
+    title = {pOp: Parameter Optimization of Differentiable Vector Patterns},
+    journal = {Computer Graphics Forum},
+    volume = {41},
+    number = {4},
+    pages = {161-168},
+    keywords = {CCS Concepts, • Computing methodologies → Texturing},
+    doi = {https://doi.org/10.1111/cgf.14595},
+    url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14595},
+    eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.14595},
+    year = {2022}
+}
+                </p>
+			</section>
+
+			<footer>&nbsp;</footer>
+		</main>
+
+		<!-- MathJax configuration -->
+		<script>
+		MathJax = {
+			tex: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		};
+		</script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	</body>
+</html>
