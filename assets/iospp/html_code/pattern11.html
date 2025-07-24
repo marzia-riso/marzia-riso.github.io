@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Optimization of Scaffolded Procedural Patterns - Code Visualization</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            width: 960px;
+            margin: 0 auto;
+        }
+pre { white-space: pre; overflow: auto; }
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
+</head>
+<body>
+  <h1>Interactive Optimization of Scaffolded Procedural Patterns</h1>
+  <h2>Code for Pattern in Fig. 11(c)</h2>
+
+  <div>
+    <img src="../variations/pattern11_1.png" style="width: 24%;">
+    <img src="../variations/pattern11_2.png" style="width: 24%;">
+    <img src="../variations/pattern11_3.png" style="width: 24%;">
+    <img src="../variations/pattern11_4.png" style="width: 24%;">
+  </div>
+  <div><img width="960px" src="../graphs/pattern11.png"></div>
+  <div width="960px"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;nodes.cuh&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Params1Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">theta</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float2</span><span class="w"> </span><span class="n">trans</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float2</span><span class="w"> </span><span class="n">space</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">thickness</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Params2Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">thickness</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Params3Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">thickness</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Params4Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">offset</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">inner</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Params5Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">theta</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Consts0Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">double_pi</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">pi</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Consts1Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float2</span><span class="w"> </span><span class="n">two</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float2</span><span class="w"> </span><span class="n">one</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Consts2Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">half_one</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">zero</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">one</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">two</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Consts4Input</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">levelid0</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">levelid1</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">levelid2</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">levelid3</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">levelid4</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">LevelsOutput</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Level1Output</span><span class="w"> </span><span class="n">level1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Level2Output</span><span class="w"> </span><span class="n">level2</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Level3Output</span><span class="w"> </span><span class="n">level3</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Level4Output</span><span class="w"> </span><span class="n">level4</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Level5Output</span><span class="w"> </span><span class="n">level5</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">__device__</span><span class="w"> </span><span class="kr">__forceinline__</span><span class="w"> </span><span class="n">LevelsOutput</span><span class="w"> </span><span class="n">LevelsImpl</span><span class="p">(</span><span class="n">PositionInput</span><span class="w"> </span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">Params1Input</span><span class="w"> </span><span class="n">params1</span><span class="p">,</span><span class="w"> </span><span class="n">Params2Input</span><span class="w"> </span><span class="n">params2</span><span class="p">,</span><span class="w"> </span><span class="n">Params3Input</span><span class="w"> </span><span class="n">params3</span><span class="p">,</span><span class="w"> </span><span class="n">Params4Input</span><span class="w"> </span><span class="n">params4</span><span class="p">,</span><span class="w"> </span><span class="n">Params5Input</span><span class="w"> </span><span class="n">params5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Consts0Input</span><span class="w"> </span><span class="n">consts0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Consts0Input</span><span class="p">{</span><span class="mf">6.28</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">};</span>
+<span class="w">  </span><span class="n">Consts1Input</span><span class="w"> </span><span class="n">consts1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Consts1Input</span><span class="p">{</span><span class="kt">float2</span><span class="p">{</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">},</span><span class="w"> </span><span class="kt">float2</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">}};</span>
+<span class="w">  </span><span class="n">Consts2Input</span><span class="w"> </span><span class="n">consts2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Consts2Input</span><span class="p">{</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">};</span>
+<span class="w">  </span><span class="n">Consts4Input</span><span class="w"> </span><span class="n">consts4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Consts4Input</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">};</span>
+<span class="w">  </span><span class="n">NormalizeOut</span><span class="w"> </span><span class="n">normalized_theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NormalizeImpl</span><span class="p">(</span><span class="n">NormalizeIn</span><span class="p">{</span><span class="n">params1</span><span class="p">.</span><span class="n">theta</span><span class="p">,</span><span class="w"> </span><span class="n">consts0</span><span class="p">.</span><span class="n">double_pi</span><span class="p">,</span><span class="w"> </span><span class="n">consts0</span><span class="p">.</span><span class="n">pi</span><span class="p">});</span>
+<span class="w">  </span><span class="n">RotationOut</span><span class="w"> </span><span class="n">rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RotationImpl</span><span class="p">(</span><span class="n">RotationIn</span><span class="p">{</span><span class="n">position</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">normalized_theta</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">Normalize2fOut</span><span class="w"> </span><span class="n">normalized_trans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Normalize2fImpl</span><span class="p">(</span><span class="n">Normalize2fIn</span><span class="p">{</span><span class="n">params1</span><span class="p">.</span><span class="n">trans</span><span class="p">,</span><span class="w"> </span><span class="n">consts1</span><span class="p">.</span><span class="n">two</span><span class="p">,</span><span class="w"> </span><span class="n">consts1</span><span class="p">.</span><span class="n">one</span><span class="p">});</span>
+<span class="w">  </span><span class="n">TranslationOut</span><span class="w"> </span><span class="n">translation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TranslationImpl</span><span class="p">(</span><span class="n">TranslationIn</span><span class="p">{</span><span class="n">rotation</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">normalized_trans</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">RepetitionOut</span><span class="w"> </span><span class="n">repetition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RepetitionImpl</span><span class="p">(</span><span class="n">RepetitionIn</span><span class="p">{</span><span class="n">translation</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params1</span><span class="p">.</span><span class="n">space</span><span class="p">});</span>
+<span class="w">  </span><span class="n">GridOut</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GridImpl</span><span class="p">(</span><span class="n">GridIn</span><span class="p">{</span><span class="n">repetition</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params1</span><span class="p">.</span><span class="n">thickness</span><span class="p">});</span>
+<span class="w">  </span><span class="n">Level1Output</span><span class="w"> </span><span class="n">level1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Level1Output</span><span class="p">{</span><span class="n">grid</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">consts4</span><span class="p">.</span><span class="n">levelid0</span><span class="p">};</span>
+<span class="w">  </span><span class="n">StripeOut</span><span class="w"> </span><span class="n">stripe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StripeImpl</span><span class="p">(</span><span class="n">StripeIn</span><span class="p">{</span><span class="n">repetition</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params2</span><span class="p">.</span><span class="n">thickness</span><span class="p">});</span>
+<span class="w">  </span><span class="n">ScaffoldIdOut</span><span class="w"> </span><span class="n">scaffold_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScaffoldIdImpl</span><span class="p">(</span><span class="n">ScaffoldIdIn</span><span class="p">{</span><span class="n">grid</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">consts4</span><span class="p">.</span><span class="n">levelid0</span><span class="p">,</span><span class="w"> </span><span class="n">stripe</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">consts4</span><span class="p">.</span><span class="n">levelid1</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">.</span><span class="n">view_scaffold</span><span class="p">});</span>
+<span class="w">  </span><span class="n">Level2Output</span><span class="w"> </span><span class="n">level2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Level2Output</span><span class="p">{</span><span class="n">scaffold_id</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">scaffold_id</span><span class="p">.</span><span class="n">levelid</span><span class="p">};</span>
+<span class="w">  </span><span class="n">FromVec2Out</span><span class="w"> </span><span class="n">fromvec21</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FromVec2Impl</span><span class="p">(</span><span class="n">FromVec2In</span><span class="p">{</span><span class="n">params1</span><span class="p">.</span><span class="n">space</span><span class="p">});</span>
+<span class="w">  </span><span class="n">MulOut</span><span class="w"> </span><span class="n">mul1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MulImpl</span><span class="p">(</span><span class="n">MulIn</span><span class="p">{</span><span class="n">fromvec21</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">consts2</span><span class="p">.</span><span class="n">two</span><span class="p">});</span>
+<span class="w">  </span><span class="n">MulOut</span><span class="w"> </span><span class="n">mul2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MulImpl</span><span class="p">(</span><span class="n">MulIn</span><span class="p">{</span><span class="n">fromvec21</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">consts2</span><span class="p">.</span><span class="n">half_one</span><span class="p">});</span>
+<span class="w">  </span><span class="n">MulOut</span><span class="w"> </span><span class="n">mul3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MulImpl</span><span class="p">(</span><span class="n">MulIn</span><span class="p">{</span><span class="n">mul1</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">consts2</span><span class="p">.</span><span class="n">half_one</span><span class="p">});</span>
+<span class="w">  </span><span class="n">MulOut</span><span class="w"> </span><span class="n">mul4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MulImpl</span><span class="p">(</span><span class="n">MulIn</span><span class="p">{</span><span class="n">fromvec21</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">consts2</span><span class="p">.</span><span class="n">half_one</span><span class="p">});</span>
+<span class="w">  </span><span class="n">ToVec2Out</span><span class="w"> </span><span class="n">tovec2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToVec2Impl</span><span class="p">(</span><span class="n">ToVec2In</span><span class="p">{</span><span class="n">consts2</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span><span class="w"> </span><span class="n">mul4</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">TranslationOut</span><span class="w"> </span><span class="n">translation2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TranslationImpl</span><span class="p">(</span><span class="n">TranslationIn</span><span class="p">{</span><span class="n">translation</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">tovec2</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">RepetitionOut</span><span class="w"> </span><span class="n">repetition2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RepetitionImpl</span><span class="p">(</span><span class="n">RepetitionIn</span><span class="p">{</span><span class="n">translation2</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params1</span><span class="p">.</span><span class="n">space</span><span class="p">});</span>
+<span class="w">  </span><span class="n">StripeOut</span><span class="w"> </span><span class="n">stripe2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">StripeImpl</span><span class="p">(</span><span class="n">StripeIn</span><span class="p">{</span><span class="n">repetition2</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params3</span><span class="p">.</span><span class="n">thickness</span><span class="p">});</span>
+<span class="w">  </span><span class="n">OverIdOut</span><span class="w"> </span><span class="n">over_id2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OverIdImpl</span><span class="p">(</span><span class="n">OverIdIn</span><span class="p">{</span><span class="n">scaffold_id</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">scaffold_id</span><span class="p">.</span><span class="n">levelid</span><span class="p">,</span><span class="w"> </span><span class="n">stripe2</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">consts4</span><span class="p">.</span><span class="n">levelid2</span><span class="p">});</span>
+<span class="w">  </span><span class="n">Level3Output</span><span class="w"> </span><span class="n">level3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Level3Output</span><span class="p">{</span><span class="n">over_id2</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">over_id2</span><span class="p">.</span><span class="n">levelid</span><span class="p">};</span>
+<span class="w">  </span><span class="n">ToVec2Out</span><span class="w"> </span><span class="n">tovec21</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToVec2Impl</span><span class="p">(</span><span class="n">ToVec2In</span><span class="p">{</span><span class="n">fromvec21</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">mul1</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">RoundOut</span><span class="w"> </span><span class="n">round</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RoundImpl</span><span class="p">(</span><span class="n">RoundIn</span><span class="p">{</span><span class="n">params4</span><span class="p">.</span><span class="n">offset</span><span class="p">});</span>
+<span class="w">  </span><span class="n">MulOut</span><span class="w"> </span><span class="n">mul5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MulImpl</span><span class="p">(</span><span class="n">MulIn</span><span class="p">{</span><span class="n">mul3</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">round</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">ToVec2Out</span><span class="w"> </span><span class="n">tovec3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToVec2Impl</span><span class="p">(</span><span class="n">ToVec2In</span><span class="p">{</span><span class="n">consts2</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span><span class="w"> </span><span class="n">mul5</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">TranslationOut</span><span class="w"> </span><span class="n">translation3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TranslationImpl</span><span class="p">(</span><span class="n">TranslationIn</span><span class="p">{</span><span class="n">translation</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">tovec3</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">RepetitionOut</span><span class="w"> </span><span class="n">repetition3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RepetitionImpl</span><span class="p">(</span><span class="n">RepetitionIn</span><span class="p">{</span><span class="n">translation3</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">tovec21</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">CircleOut</span><span class="w"> </span><span class="n">circle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CircleImpl</span><span class="p">(</span><span class="n">CircleIn</span><span class="p">{</span><span class="n">repetition3</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params4</span><span class="p">.</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">params4</span><span class="p">.</span><span class="n">inner</span><span class="p">});</span>
+<span class="w">  </span><span class="n">OverIdOut</span><span class="w"> </span><span class="n">over_id3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OverIdImpl</span><span class="p">(</span><span class="n">OverIdIn</span><span class="p">{</span><span class="n">over_id2</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">over_id2</span><span class="p">.</span><span class="n">levelid</span><span class="p">,</span><span class="w"> </span><span class="n">circle</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">consts4</span><span class="p">.</span><span class="n">levelid3</span><span class="p">});</span>
+<span class="w">  </span><span class="n">Level4Output</span><span class="w"> </span><span class="n">level4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Level4Output</span><span class="p">{</span><span class="n">over_id3</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">over_id3</span><span class="p">.</span><span class="n">levelid</span><span class="p">};</span>
+<span class="w">  </span><span class="n">SubOut</span><span class="w"> </span><span class="n">sub_round</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SubImpl</span><span class="p">(</span><span class="n">SubIn</span><span class="p">{</span><span class="n">consts2</span><span class="p">.</span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">round</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">MulOut</span><span class="w"> </span><span class="n">mul6</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MulImpl</span><span class="p">(</span><span class="n">MulIn</span><span class="p">{</span><span class="n">mul3</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">sub_round</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">ToVec2Out</span><span class="w"> </span><span class="n">tovec4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToVec2Impl</span><span class="p">(</span><span class="n">ToVec2In</span><span class="p">{</span><span class="n">mul2</span><span class="p">.</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">mul6</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">TranslationOut</span><span class="w"> </span><span class="n">translation5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TranslationImpl</span><span class="p">(</span><span class="n">TranslationIn</span><span class="p">{</span><span class="n">translation</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">tovec4</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">RepetitionOut</span><span class="w"> </span><span class="n">repetition4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RepetitionImpl</span><span class="p">(</span><span class="n">RepetitionIn</span><span class="p">{</span><span class="n">translation5</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">tovec21</span><span class="p">.</span><span class="n">value</span><span class="p">});</span>
+<span class="w">  </span><span class="n">RotationOut</span><span class="w"> </span><span class="n">rotation2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RotationImpl</span><span class="p">(</span><span class="n">RotationIn</span><span class="p">{</span><span class="n">repetition4</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params5</span><span class="p">.</span><span class="n">theta</span><span class="p">});</span>
+<span class="w">  </span><span class="n">BoxOut</span><span class="w"> </span><span class="n">box</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BoxImpl</span><span class="p">(</span><span class="n">BoxIn</span><span class="p">{</span><span class="n">rotation2</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">params5</span><span class="p">.</span><span class="n">size</span><span class="p">});</span>
+<span class="w">  </span><span class="n">OverIdOut</span><span class="w"> </span><span class="n">over_id4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OverIdImpl</span><span class="p">(</span><span class="n">OverIdIn</span><span class="p">{</span><span class="n">over_id3</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">over_id3</span><span class="p">.</span><span class="n">levelid</span><span class="p">,</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">consts4</span><span class="p">.</span><span class="n">levelid4</span><span class="p">});</span>
+<span class="w">  </span><span class="n">Level5Output</span><span class="w"> </span><span class="n">level5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Level5Output</span><span class="p">{</span><span class="n">over_id4</span><span class="p">.</span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="n">over_id4</span><span class="p">.</span><span class="n">levelid</span><span class="p">};</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">LevelsOutput</span><span class="p">{</span><span class="n">level1</span><span class="p">,</span><span class="w"> </span><span class="n">level2</span><span class="p">,</span><span class="w"> </span><span class="n">level3</span><span class="p">,</span><span class="w"> </span><span class="n">level4</span><span class="p">,</span><span class="w"> </span><span class="n">level5</span><span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</body>
+</html>

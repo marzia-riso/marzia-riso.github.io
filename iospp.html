@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Interactive Optimization of Scaffolded Procedural Patterns</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/projects_style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body class="h-entry">
+		<h1 class="p-name"><a class="u-url" href="iospp.html">Interactive Optimization of Scaffolded Procedural Patterns</a></h1>
+
+		<div class="s-venue">
+			ACM SIGGRAPH '<time class="dt-published" datetime="2025-12-01 12:00:00">25</time> - Conference Track
+		</div>
+
+		<div class="s-authorlist" style="max-width: 70em;">
+      <div class="p-author h-card">
+				<a class="p-name u-url" href="">Davide Sforza*</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://marzia-riso.github.io">Marzia Riso*</a>
+				<ul>
+					<li>
+						<a class="p-org h-card" href="https://www.uniroma1.it/en">Sapienza University of Rome</a><br>
+						<a class="p-org h-card" href="">Inria Université Côte d'Azur</a>
+					</li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="">Filippo Muzzini</a>
+				<ul>
+					<li><a class="p-org h-card" href="">University of Modena and Reggio Emilia</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="">Nicola Capodieci</a>
+				<ul>
+					<li><a class="p-org h-card" href="">University of Modena and Reggio Emilia</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://xelatihy.github.io/">Fabio Pellacini</a>
+				<ul>
+					<li><a class="p-org h-card" href="">University of Modena and Reggio Emilia</a></li>
+				</ul>
+			</div>
+		</div>
+
+    <div class="p-name" style="text-align: center;">
+      <h4><sup>*</sup>Joint first authors</h4>
+    </div>
+
+		<main>
+			<figure>
+				<img alt="Teaser image" src="assets/iospp/teaser.png"/>
+				<figcaption>
+					We interactively edit procedural patterns by optimizing their parameters towards the best match with respect to hand-drawn sketches. We base our
+					work on the use of scaffolded procedural patterns, that are sets of coarse-to-fine procedural functions, called levels, each of which is parametrized by a superset
+					of the previous function’s procedural parameters. Scaffolded patterns are edited level-by-level, allowing users to sketch in a coarse-to-fine manner rather than
+					requiring them to sketch all details simultaneously. Also, since the optimization is split into multiple levels, the overall method is fast and stable, making it
+					suitable for real-time sketching. Here, we show a pattern drawn in seven steps, using red to highlight user’s strokes.
+                </figcaption>
+			</figure>
+
+			<ul class="s-download-links">
+				<li><a href="assets/iospp/iospp_paper.pdf">Paper</a></li>
+			</ul>
+
+			<section>
+				<h2>Abstract</h2>
+				<p class="p-summary s-content">
+					A procedural program is the representation of a family of assets that share the same structural or semantic properties, whose final appearance is determined by different parameter assignments. 
+					Identifying the parameter values that define a desired asset is usually a time-consuming operation, since it requires manually tuning parameters separately and in a non-intuitive manner. 
+					In the domain of procedural patterns, recent works focused on estimating parameter values to match a target render or sketch, using parameter optimization or inference via neural networks. 
+					However, these approaches are neither fast enough for interactive design nor precise enough to give direct control. 
+					In this work, we propose an interactive method for procedural parameter estimation based on the idea of scaffolded procedural patterns.
+					A scaffolded procedural pattern is a sequence of procedural programs that model a pattern in a coarse-to-fine manner, in which the desired pattern appearance is reached step-by-step by inheriting previously optimized parameters. 
+					Through scaffolding, patterns are more straightforward to sketch for users and easier to optimize for most algorithms. 
+					In our implementation, patterns are represented as procedural signed distance functions whose parameters are estimated with a gradient-free optimization method that runs in real-time on the GPU. 
+					We show that scaffolded patterns can be created with a node-based interface familiar to artists. 
+					We validate our approach by creating and interactively editing several scaffolded patterns. 
+					We show the effectiveness of scaffolding through a user study, where scaffolding enhances both the output quality and the editing experience with respect to approaches that optimize the procedural parameters all at once. 
+					We also perform a comparison with previous strategies and provide several recordings of real-time editing sessions in the accompanying materials.
+				</p>
+			</section>
+
+			<section>
+				<h2>Results</h2>
+				<p class="p-summary s-content">
+					Scaffolding simplifies the sketching and optimization of complex patterns by increasing the number of intermediate steps.
+					In the "Video" supplementary page, we present recordings of the editing sessions that produced the results shown in the main figures of the paper.
+					The "Code" supplementary page contains the graph representations and the corresponding CUDA implementations for each procedural pattern.
+				</p>
+				<video controls>    
+					<source src="assets/iospp/videos/figure_1.mp4" type="video/mp4">
+				</video>
+
+				<ul class="s-download-links">
+					<li><a href="assets/iospp/video_visualization.html">Videos</a></li>
+					<li><a href="assets/iospp/code_visualization.html">Code</a></li> 
+ 
+				</ul>
+			</section>
+
+			<section>
+				<h2>Citation</h2>
+				<p class="s-citation">@inproceedings{10.1145/3721238.3730667,
+  author = {Sforza, Davide and Riso, Marzia and Muzzini, Filippo and Capodieci, Nicola and Pellacini, Fabio},
+  title = {Interactive Optimization of Scaffolded Procedural Patterns},
+  year = {2025},
+  publisher = {ACM},
+  booktitle = {Proceedings of the Special Interest Group on Computer Graphics and 
+	Interactive Techniques Conference Conference Papers},
+  doi = {10.1145/3721238.3730667}
+}</p>
+			</section>
+
+			<footer>&nbsp;</footer>
+		</main>
+
+		<!-- MathJax configuration -->
+		<script>
+		MathJax = {
+			tex: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		};
+		</script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	</body>
+</html>
