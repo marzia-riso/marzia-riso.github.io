@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>From blades to tracks: a case study in structural reuse of curved surfaces for circular design</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/projects_style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body class="h-entry">
+		<h1 class="p-name"><a class="u-url" href="blades.html"><a>From blades to tracks: a case study in structural reuse<br>of curved surfaces for circular design</h1>
+
+		<div class="s-venue">
+			ACM Symposium on Computational Fabrication (SCF) '<time class="dt-published" datetime="2024-12-01 12:00:00">25</time>
+		</div>
+
+		<div class="s-authorlist">
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="">Jesse Pupping*</a>
+				<ul>
+					<li><a class="p-org h-card" href="">Delft University of Technology</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://marzia-riso.github.io">Marzia Riso*</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://www.uniroma1.it/en">Inria Université Côte d'Azur</a></li>
+				</ul>
+			</div>
+            <div class="p-author h-card">
+				<a class="p-name u-url" href="">Mariana Popescu</a>
+				<ul>
+					<li><a class="p-org h-card" href="">Delft University of Technology<br>MIT</a></li>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="">Adrien Bousseau</a>
+				<ul>
+					<li><a class="p-org h-card" href="">Inria Université Côte d'Azur</a></li>
+				</ul>
+			</div>
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="">Jelle Joustra</a>
+				<ul>
+					<li><a class="p-org h-card" href="">Delft University of Technology</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<main>
+			<figure>
+				<img alt="Teaser image" src="assets/blades/teaser.png"/>
+				<figcaption>
+					Our prototype pumptrack module (seen on the left hand-side of the picture) being tested by a BMX rider. Our module
+					is made of two panels extracted from a decommissioned wind turbine blade, and matches the curvature of standard modules
+					(seen on the right hand-side). Picture by ©Patrick Wetzels, TU Delft.
+				</figcaption>
+			</figure>
+
+			<ul class="s-download-links">
+				<li><a href="assets/blades/blades_paper.pdf">Paper</a></li> <li><a href="https://www.youtube.com/watch?v=5OLoWXiQiFY&t=12s">Video</a></li>
+			</ul>
+
+			<section>
+				<h2>Abstract</h2>
+				<p class="p-summary s-content">
+					We explore the fabrication of curved surfaces by reusing panels extracted from decommissioned wind turbine blades, using cycling pumptracks as a case study. We first present real-world prototypes of pumptrack modules that we manufactured to evaluate the practicality of this reuse scenario and to define the boundary conditions for harvesting blade panels and assembling a track. We then propose an algorithm to optimize the segmentation of a wind turbine blade into quadrilateral panels whose sides fall within a small set of compatible boundaries. These panels form a library of modules that designers can connect side by side to create pumptracks of various lengths and curvatures. Together, these contributions provide a proof-of-concept of how computer-aided design and manufacturing can support circular design through the reuse of curved surfaces.
+				</p>
+			</section>
+
+			<section>
+				<h2>Results</h2>
+				<figure>
+					<img alt="Results" src="assets/blades/results.png"/>
+					<figcaption>
+						Taking 6 blade segments as input (a), our algorithm extracts 36 modules and identify 6 groups of compatible
+						boundaries (b, only a subset of modules and compatibility groups shown). The modules exhibit diverse curvature, twist, and
+						angle between their two extremities, allowing to create tracks with corners (c, top) and rollers (c, bottom).
+					</figcaption>
+				</figure>
+
+			</section>
+
+			<section>
+				<h2>Video</h2>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/5OLoWXiQiFY?si=pk3aGJ3zjneDMU1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>			</section>
+
+			<section>
+				<h2>Citation</h2>
+				<p class="s-citation">@InProceedings{PRPBJ25,
+	author       = "Pupping, Jesse and Riso, Marzia and Popescu, Mariana and Bousseau, Adrien and Joustra, Jelle",
+	title        = "From blades to tracks: a case study in structural reuse of curved surfaces for circular design",
+	booktitle    = "ACM Symposium on Computational Fabrication (SCF)",
+	year         = "2025",
+	publisher    = "ACM",
+	url          = "http://www-sop.inria.fr/reves/Basilic/2025/PRPBJ25"
+	}</p>
+			</section>
+
+			<footer>&nbsp;</footer>
+		</main>
+
+		<!-- MathJax configuration -->
+		<script>
+		MathJax = {
+			tex: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		};
+		</script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	</body>
+</html>
